@@ -30,7 +30,7 @@ top navbar
     display: flex;
 }
 
-.tabs .tab {
+.tabs a  {
     flex: 1;
     box-sizing: border-box;
     background: #454270;
@@ -40,6 +40,9 @@ top navbar
     box-shadow: 5px 0px 4px #ccc;
     border: #dbdbdb solid 2px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /**************************************************

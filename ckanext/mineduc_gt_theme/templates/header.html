@@ -90,10 +90,12 @@
             </hgroup>
         </div>
         <div class="col-sm-6 col-sm-offset-2 tabs">
-          <a href="#" class="tab">Iniciar sesión</a>
-          <a href="#" class="tab">Otro</a>
-          <a href="#" class="tab">Otro</a>
-          <a href="#" class="tab">Otro</a>
+          {% if not c.userobj %}
+            {% link_for _('Log in'), controller='user', action='login' %}
+          {% endif %}
+          <a href="#" >Encuesta</a>
+          <a href="#" >¿Qué son los datos abiertos?</a>
+          
         </div>
       </div>
     </div>
