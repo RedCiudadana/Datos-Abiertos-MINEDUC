@@ -1,29 +1,21 @@
-<div class="container-fluid footer">
-    <div class="polygon-inverted"></div>
-    {% block footer_content %}
-    <div class="row">
-      <div class="col-md-6">
-        <ul class="list-unstyled">
-          {% block footer_content_left %}
-          <li>PBX: 2374-3000</li>
-          <li><a href="http://www.minfin.gob.gt/">www.minfin.gob.gt</a></li>
-          <li>8a avenida 20-59, Zona 1, Centro Cívico, Guatemala - 01001</li>
-          {% endblock %}
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="list-unstyled">
-          <li class="text-right">Organismo Judicial</li>
-          <li class="text-right">Organismo Ejecutivo</li>
-          <li class="text-right">Organismo Legislativo</li>
-        </ul>
-      </div>
-    </div>
-    {% endblock %}
-  
-  {%- block footer_debug %}
-    {% if g.debug %}
-    {% include 'snippets/debug.html' %}
-    {% endif %}
-  {% endblock -%}
+<div class="footer-container">
+  {% block footer_content %}
+  <div class="footer-column">
+    <h1>Contáctanos</h1>
+    <span>Dirección 6a calle 1-10 zona 10 Guatemala</span>
+    <span>PBX: +(502) 2411-9595</span>
+    <span>Correo electrónico: info@mineduc.gob.gt</span>
+  </div>
+  <div class="footer-column">
+    <a href="#">mineduc.gob.gt</a>
+    <a href="#">Portal de datos abiertos</a>
+  </div>
+  <div class="footer-column footer-social">
+    <h1>Síguenos en:</h1>
+    <a href="#" class="social-link">Facebook</a>
+    <a href="#" class="social-link">Twitter</a>
+  </div>
+  {% endblock %}
 </div>
+
+{%- block footer_debug %} {% if g.debug %} {% include 'snippets/debug.html' %} {% endif %} {% endblock -%}
