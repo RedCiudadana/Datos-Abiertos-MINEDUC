@@ -79,98 +79,44 @@
   </nav>
 </div>
 {% endblock %}
-
-
-<div class="container-fluid">
-  <div class="mainbar" style="padding-top: 30px;">
-    {% block header_debug %}
-    {% if g.debug and not g.debug_supress_header %}
-    <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-    {% endif %}
-    {% endblock %}
-    <div class="container-fluid">
-      <div class="col-sm-8"></div>
-      <div class="col-sm-4">
-        <hgroup class="{{ g.header_class }}">
-          <a class="logo red" href="{{ h.url_for('home') }}"><img src="/img/red.jpg" alt="redciudadana-logo" /></a>
-        </hgroup>
-  
-        <hgroup class="{{ g.header_class }}">
-          <a class="logo small" href="{{ h.url_for('home') }}"><img src="/img/pl_logo.png" alt="minfin-logo" /></a>
-        </hgroup>
-      </div>
-    </div>
-    <div class="container-fluid pseudo-black" style="min-height: 105px;">
-      <div class="polygon"></div>
-      <div class="col-sm-8">
+<div class="flex-wrapper">
+    <div class="container-fluid mainbar">
+        <div class="col-sm-4">
           <hgroup class="{{ g.header_class }}">
-            {% block header_logo %}
-            <a class="logo scalated" href="{{ h.url_for('home') }}">Datos Legislativos</a>
-            {% endblock %}    
-          </hgroup>
+              <a class="logo small" href="{{ h.url_for('home') }}"><img src="/img/gobierno.png" alt="minfin-logo" /></a>
+            </hgroup>
+            <hgroup class="{{ g.header_class }}">
+              <a class="logo red" href="{{ h.url_for('home') }}"><img src="/img/red.png" alt="redciudadana-logo" /></a>
+            </hgroup>
         </div>
-        <div class="col-sm-4" style="padding-top: 30px;">
-          {% if not c.userobj %}
-            <li class="polygon-link">{% link_for _('Log in'), controller='user', action='login' %}</li>
-            {% if h.check_access('user_create') %}
-              <li class="polygon-link">{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
-            {% endif %}
-          {% endif %}
+        <div class="col-sm-6 col-sm-offset-2 tabs">
+          <a href="#" class="tab">Iniciar sesión</a>
+          <a href="#" class="tab">Otro</a>
+          <a href="#" class="tab">Otro</a>
+          <a href="#" class="tab">Otro</a>
         </div>
-      
-      
+      </div>
     </div>
-    
-  </div>
+    {% if h.current_url() == '/' %}
+    <div class="header-banner">
+      <h1 class="title">Portal de Datos Abiertos</h1>
+      <h2 class="title">del Ministerio de Educación de Guatemala</h2>
+      {% block header_site_search %}
+      
+        <form class="search-bar" action="{% url_for controller='package', action='search' %}" method="get">
+          <input id="field-sitewide-search"
+          type="text" name="q" placeholder="Buscar datos" />
+          <button type="submit">
+            <span>
+              <img src="/img/search.png" />
+            </span></button>
+        </form>
+      
+      {% endblock %}
+    </div>
+    {% endif %}
+      
 </div>
-{% if h.current_url() == '/' %}
-<div class="container-fluid">
-    <div class="container showcase img-background">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-white">Descubre datos abiertos del congreso de la república de Guatemala</h1>
-        </div>
-      </div> 
-      <div class="row">
-        <div class="col-md-12">
-          {% block header_site_search %}
-          <form class="form-inline" action="{% url_for controller='package', action='search' %}" method="get">
-            <div class="form-group form-group-lg">
-              <div class="input-group">
-                <input class="form-control col-md-12" id="field-sitewide-search"
-                type="text" name="q" placeholder="Buscar datos" />
-                <span class="input-group-btn">
-                  <button class="btn btn-lg btn-default" type="submit">
-                    Buscar
-                  </button>
-                </span>
-              </div>
-            </div>
-          </form>
-          {% endblock %}
-        </div>
-    </div>
-      
-    <div class="row">
-      <div class="col-sm-4 showcase-links">
-        <a href="#" class="showcase-link showcase-1"></a>
-      </div>
-      <!-- <div class="col-sm-1 showcase-links">
-        
-      </div> -->
-      <div class="col-sm-4 showcase-links">
-        <a href="#" class="showcase-link showcase-2"></a>
-      </div>
-      <!-- <div class="col-sm-1 showcase-links">
-        
-      </div> -->
-      <div class="col-sm-4 showcase-links">
-        <a href="#" class="showcase-link showcase-3"></a>
-      </div>
-    </div>
-      
-  </div>
-  {% endif %}
-</div>
+
 
 {% endblock %}
