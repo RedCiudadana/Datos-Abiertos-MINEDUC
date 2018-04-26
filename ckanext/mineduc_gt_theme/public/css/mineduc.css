@@ -125,6 +125,13 @@ Links
     align-items: stretch;
 }
 
+@media(max-width: 800px) {
+    .purple-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
 a.purple-link {
     flex: 1;
     border: #000000 solid 1px;
@@ -140,6 +147,47 @@ a.purple-link img {
     width: auto;
     height: 75px;
     margin: 20px;
+}
+
+.floating-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 70px 15%;
+    background: #ededed;
+}
+
+.floating-button {
+    border-radius: 25px;
+    border: #ffffff solid 2px;
+    box-shadow: 3px 3px 5px #b4b5bf;
+    flex: 1;
+    margin: 0 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+}
+
+.floating-button img {
+    height: 120px;
+    width: auto;
+    padding: 15px;
+}
+
+.floating-button-1 {
+    background: #fcb816;
+}
+
+.floating-button-2 {
+    background: #15c2d2;
+}
+
+.floating-button-3 {
+    background: #3f4167;
 }
 
 
