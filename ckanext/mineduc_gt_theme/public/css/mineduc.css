@@ -249,6 +249,18 @@ footer
     background: #44426e;
 }
 
+@media(max-width: 800px) {
+    .footer-container {
+        flex-direction: column;   
+    }
+
+    .footer-column {
+        margin: 15px 0;
+        align-items: center;
+    }
+}
+
+
 .footer-column {
     flex: 4;
     color: #ffffff;
