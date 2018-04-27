@@ -8,6 +8,10 @@ a, a:hover {
     color: #ffffff;
 }
 
+.breadcrumb a {
+    color: #000000;
+}
+
 .flex-wrapper {
     flex-direction: 1;
     display: flex;
