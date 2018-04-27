@@ -257,10 +257,24 @@ footer
     font-size: 1.5em;
 }
 
+.contact-info i {
+    padding: 10px;
+}
+
 .footer-column a {
     color: #ffffff;
 }
 
 .footer-social {
-    flex: 3
+    flex: 3,
+}
+
+.social-link i {
+    width: 1.5em;
+    height: 1.5em;
+    color: #ffffff;
+}
+
+.social-link {
+    padding: 10px;
 }
