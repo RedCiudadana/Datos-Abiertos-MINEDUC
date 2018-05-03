@@ -1,7 +1,11 @@
+
+
 body {
-    background: white;
-    
-    
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 5px;
+    display: flex;
+    box-sizing: border-box;
 }
 
 a, a:hover {
@@ -12,9 +16,8 @@ a, a:hover {
     color: #000000;
 }
 
-.flex-wrapper {
-    flex-direction: 1;
-    display: flex;
+.mainbar a:hover, .purple-links a:hover, .floating-buttons a:hover, .footer-container a:hover {
+    color: #ffffff;
 }
 
 
@@ -24,20 +27,41 @@ top navbar
 
 .mainbar {
     display: flex;
-    width: 100%;
     flex-direction: row;
-    align-content: stretch;
+    align-items: center;
+    min-height: 125px;
 }
 
-.mainbar > .tabs {
+@media(max-width: 650px) {
+    .mainbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.logos-container {
+    flex: 2;
+    flex-direction: row;
+    display: flex;
+}
+
+.logos-container .logo {
+    width: 150px;
+    padding: 30px;
+}
+
+.tabs {
     align-self: flex-end;
     display: flex;
+    flex-direction: row;
+    flex: 1;
 }
 
 .tabs a  {
     flex: 1;
     box-sizing: border-box;
-    background: #454270;
+    background: #2e3e4b;
     color: #ffffff;
     padding: 15px;
     border-radius: 25px 25px 0px 0px;
@@ -47,6 +71,7 @@ top navbar
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 
 /**************************************************
@@ -55,13 +80,11 @@ banner
 
 .header-banner {
     align-self: stretch;
-    background: url('/img/background.png') no-repeat 100% 100%;
+    background: url('/img/background2.png') 100% 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    
+    padding: 60px 10px;
 }
 
 h1.title {
@@ -119,6 +142,22 @@ h2.title {
     padding-bottom: 5px;
 }
 
+@media(max-width: 800px) {
+    .search-bar {
+        border-radius: 10px;
+        width: auto;
+        max-width: inherit;
+        align-self: stretch;
+        margin: 15px;
+    }
+
+    .search-bar input {
+        padding-left: 5px;
+        
+        
+    }
+}
+
 
 
 /**************************************************
@@ -127,7 +166,7 @@ Links
 
 .purple-links {
     display: flex;
-    background: #44426e;
+    background: #00b5e0;
     flex-direction: row;
     align-items: stretch;
 }
@@ -152,7 +191,7 @@ a.purple-link {
 
 a.purple-link img {
     width: auto;
-    height: 75px;
+    height: auto;
     margin: 20px;
 }
 
@@ -160,7 +199,7 @@ a.purple-link img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 70px 15%;
+    padding: 70px 0;
     background: #ededed;
 }
 
@@ -176,6 +215,8 @@ a.purple-link img {
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    max-width: 280px;
+    text-align: center;
 
 }
 
@@ -186,13 +227,14 @@ a.purple-link img {
     }
 
     .floating-button {
-        margin: 15px;
+        margin: 15px 20%;
+        max-width: inherit;
     }
 }
 
 
 .floating-button img {
-    height: 120px;
+    height: auto;
     width: auto;
     padding: 15px;
 }
@@ -202,11 +244,11 @@ a.purple-link img {
 }
 
 .floating-button-2 {
-    background: #15c2d2;
+    background: #d21569;
 }
 
 .floating-button-3 {
-    background: #3f4167;
+    background: #14689a;
 }
 
 
@@ -245,8 +287,9 @@ footer
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     padding: 20px;
-    background: #44426e;
+    background: #153863;
 }
 
 @media(max-width: 800px) {
@@ -262,15 +305,30 @@ footer
 
 
 .footer-column {
-    flex: 4;
+    flex: 1;
     color: #ffffff;
     display: flex;
     flex-direction: column;
+    max-width: 280px;
+    padding: 10px;
+    align-items: stretch;
 }
 
 .footer-column h1 {
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.footer-center {
+    align-items: center;
+}
+
+.contact-info {
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 5px;
 }
 
 .contact-info i {
@@ -282,7 +340,7 @@ footer
 }
 
 .footer-social {
-    flex: 3,
+    flex: 3;
 }
 
 .social-link i {
