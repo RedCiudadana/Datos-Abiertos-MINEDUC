@@ -176,17 +176,23 @@ Links
         flex-direction: column;
         align-items: stretch;
     }
+
+    a.purple-link {
+        padding: 30px;
+        flex: 0 0 auto;
+
+    }
 }
 
 a.purple-link {
-    flex: 1;
+    flex: 1 0 auto;
     border: #000000 solid 1px;
     color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    padding: 30px;
 }
 
 a.purple-link img {
@@ -198,17 +204,19 @@ a.purple-link img {
 .floating-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    width: 100%;
+    max-width: 100%;
     padding: 70px 0;
     background: #ededed;
+    
 }
 
 .floating-button {
     border-radius: 25px;
     border: #ffffff solid 2px;
     box-shadow: 3px 3px 5px #b4b5bf;
-    flex: 1;
-    margin: 0 15px;
+    width: 30%;
+    margin: 0 auto;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -223,12 +231,12 @@ a.purple-link img {
 @media(max-width: 800px) {
     .floating-buttons {
         flex-direction: column;
-        align-items: stretch;
     }
 
     .floating-button {
-        margin: 15px 20%;
-        max-width: inherit;
+        margin: 15px auto;
+        width: 100%;
+        padding: 30px;
     }
 }
 
@@ -287,29 +295,20 @@ footer
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    width: 100%;
+    max-width: 100%;
     padding: 20px;
     background: #153863;
+    box-sizing: border-box;
 }
-
-@media(max-width: 800px) {
-    .footer-container {
-        flex-direction: column;   
-    }
-
-    .footer-column {
-        margin: 15px 0;
-        align-items: center;
-    }
-}
-
 
 .footer-column {
-    flex: 1;
     color: #ffffff;
     display: flex;
     flex-direction: column;
     max-width: 280px;
+    width: 30%;
+    margin: 0 auto;
     padding: 10px;
     align-items: stretch;
 }
@@ -325,14 +324,21 @@ footer
 
 .contact-info {
     flex-direction: row;
-    display: flex;
-    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
     align-items: center;
     padding: 5px;
 }
 
 .contact-info i {
     padding: 10px;
+    float: left;
+}
+
+.contact-info span {
+    margin: 0 auto;
+    flex: 1;
 }
 
 .footer-column a {
@@ -340,7 +346,7 @@ footer
 }
 
 .footer-social {
-    flex: 3;
+    width: 100%;
 }
 
 .social-link i {
@@ -351,4 +357,17 @@ footer
 
 .social-link {
     padding: 10px;
+}
+
+
+@media(max-width: 800px) {
+    .footer-container {
+        flex-direction: column;   
+    }
+
+    .footer-column {
+        margin: 0;
+        align-items: center;
+        width: 100%;
+    }
 }
