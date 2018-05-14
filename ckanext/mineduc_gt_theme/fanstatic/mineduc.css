@@ -317,6 +317,7 @@ footer
 .footer-column h1 {
     font-weight: bold;
     font-size: 1.5em;
+    text-align: center;
 }
 
 .footer-center {
@@ -345,7 +346,9 @@ footer
 
 .footer-column a {
     color: #ffffff;
+    text-align: center;
 }
+
 
 .footer-social {
     width: 100%;
